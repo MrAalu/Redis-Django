@@ -1,17 +1,40 @@
 # Django REST Framework + Redis Cache
+
 This repository serves as a test for integrating Django REST Framework with Redis Cache. Explore the interaction between Django's powerful API framework and the caching capabilities of Redis.
 
 ## Features
+
 1. Django REST Framework integration
+
 2. Redis Cache setup for efficient data caching
+
 3. Django Debug-Toolbar for Visual Representation
 
 ## Demo Showcase
 
 ![](utils/Before.png)
+
 ![](utils/After.png)
 
-## Getting Started
+## Getting Started with Redis + DRF
+
+1. Run Redis Stack using DOCKER
+
+```
+
+    docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+```
+
+2. Setup Django Redis Package
+
+```
+
+    pip install django-redis
+
+```
+
+## Getting Started with this Project
 
 **_Make Sure Python is installed on your Machine with PIP File Path Setuped_**
 
@@ -45,16 +68,15 @@ This repository serves as a test for integrating Django REST Framework with Redi
 
 ```
 
-    pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ```
-
 
 5. Models Migrations
 
 ```
 
-    py manage.py makemigrations
+    py manage.py makemigrations
 
 ```
 
@@ -62,7 +84,7 @@ This repository serves as a test for integrating Django REST Framework with Redi
 
 ```
 
-    py manage.py migrate
+    py manage.py migrate
 
 ```
 
@@ -70,7 +92,7 @@ This repository serves as a test for integrating Django REST Framework with Redi
 
 ```
 
-    py manage.py loaddata populateDatabase.json
+    py manage.py loaddata populateDatabase.json
 
 ```
 
@@ -78,6 +100,6 @@ This repository serves as a test for integrating Django REST Framework with Redi
 
 ```
 
-    py manage.py runserver
+    py manage.py runserver
 
 ```
