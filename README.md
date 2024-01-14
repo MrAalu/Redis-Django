@@ -18,19 +18,31 @@ This repository serves as a test for integrating Django REST Framework with Redi
 
 ## Getting Started with Redis + DRF
 
-1. Run Redis Stack using DOCKER
+1. Run Redis using DOCKER on CustomNetwork
 
 ```
 
-    docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+    docker network create mynetwork
 
 ```
 
-2. Setup Django Redis Package
+```
+
+    docker run --name redis-container --network mynetwork -p 6379:6379 redis
 
 ```
 
-    pip install django-redis
+2. Setup Django on Docker
+
+```
+
+    docker build -t django .
+
+```
+
+```
+
+    docker run --name django-container --network=mynetwork -p 8000:8000 django
 
 ```
 

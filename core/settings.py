@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        # "LOCATION": "redis://127.0.0.1:6379/1", # Run Django on Local Host and access Redis Directly on Container
+        "LOCATION": "redis://redis-container:6379/1",  # Container to Container Access. 'redis-container' is Container name
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
